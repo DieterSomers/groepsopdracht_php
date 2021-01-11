@@ -1,0 +1,95 @@
+@use "./base/variables" as *;
+@use "./base/reset";
+@use "./base/fonts";
+@use "./base/mixins" as *;
+@import "../../icons/style.css";
+
+body {
+  font: 16px "Raleway", Helvetica, sans-serif;
+}
+
+div.container {
+  margin: 0 auto;
+  width: 1000px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 40px;
+}
+h2 {
+  font-size: 30px;
+}
+
+header {
+  background-color: #543d2c;
+  .container {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 40px;
+      color: #f1f1f1;
+      transition: all 300ms;
+      span {
+        margin-left: 15px;
+        font-size: 30px;
+      }
+      &:hover {
+        color: pink;
+      }
+    }
+    nav {
+      margin-left: auto;
+      ul {
+        display: flex;
+        align-items: center;
+        li {
+          margin: 0 15px;
+          &:nth-last-child(n) {
+            margin-right: 0;
+          }
+          a {
+            color: #f1f1f1;
+            padding: 10px;
+            border-bottom: 1px solid grey;
+            transition: all 300ms;
+            &:hover,
+            &.active {
+              color: pink;
+              border-bottom: 1px solid pink;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+main {
+  background-color: #1f2832;
+  color: #f1f1f1;
+  section {
+    background-color: #a53333;
+    margin-top: 10px;
+    padding: 20px 0px;
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+  }
+}
+footer {
+  background-color: #749ca1;
+  padding: 20px 0;
+  .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    section {
+      a {
+        color: #f1f1f1;
+      }
+    }
+  }
+}
