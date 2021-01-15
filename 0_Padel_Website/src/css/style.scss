@@ -94,3 +94,44 @@ footer {
     }
   }
 }
+
+.login {
+  text-align: center;
+  margin: 0 auto;
+  width: 500px;
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    input,
+    button {
+      padding: 1em;
+      margin: 0.3em 0;
+      text-align: center;
+      outline: none;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+    &.button {
+      transition: all 0.2s ease;
+      cursor: pointer;
+      color: #fff;
+      background-color: #e04343;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 4px #999;
+    }
+
+    &:hover {
+      background-color: #e53333;
+    }
+    &:active {
+      background-color: #e53333;
+      box-shadow: 0 3px #888;
+      transform: translateY(2px);
+    }
+  }
+}
