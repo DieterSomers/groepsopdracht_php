@@ -95,43 +95,68 @@ footer {
   }
 }
 
-.login {
-  text-align: center;
-  margin: 0 auto;
-  width: 500px;
-  form {
-    display: flex;
-    flex-direction: column;
-    padding: 2em;
-    background-color: black;
-    border: 1px solid black;
-    border-radius: 5px;
-    input,
-    button {
-      padding: 1em;
-      margin: 0.3em 0;
-      text-align: center;
-      outline: none;
+.loginbanner {
+  background-color: black;
+  .login {
+    padding-top: 1px;
+    text-align: center;
+    margin: 0 auto;
+    width: 500px;
+    h1 {
+      color: #F1F1F1;
+      margin-top: 20px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 2em;
+      background-color: black;
       border: 1px solid black;
       border-radius: 5px;
-    }
-    &.button {
-      transition: all 0.2s ease;
-      cursor: pointer;
-      color: #fff;
-      background-color: #e04343;
-      border: none;
-      border-radius: 5px;
-      box-shadow: 0 4px #999;
-    }
+      input, button {
+        margin: .3em 0;
+        text-align: center;
+        outline: none;
+        border: 1px solid black;
+      }
+      input {
+        padding: 1em;
+        color: #F1F1F1;
+        background: transparent;
+        border: 0;
+        border-bottom: 1px solid;
 
-    &:hover {
-      background-color: #e53333;
-    }
-    &:active {
-      background-color: #e53333;
-      box-shadow: 0 3px #888;
-      transform: translateY(2px);
+        font-family: inherit;
+        font-weight: 300;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        &::placeholder {
+          color: #F1F1F1;
+        }
+      }
+      .button {
+        transition: all .2s ease;
+        cursor: pointer;
+        color: #fff;
+        background-color: #e04343;
+        border: none;
+        border-radius: 50px;
+        box-shadow: 0 4px #999;
+        width: 50%;
+        margin: 0 auto;
+        margin-top: 20px;
+        padding: 1em 4em;
+        &:hover {
+          background-color: #e53333;
+        }
+        &:active {
+          background-color: #e53333;
+          box-shadow: 0 3px #888;
+          transform: translateY(2px);
+        }
+      }
     }
   }
 }
+
+
