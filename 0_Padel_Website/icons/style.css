@@ -1,0 +1,56 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+/* ==========================================
+Single-colored icons can be modified like so:
+.icon-name {
+  font-size: 32px;
+  color: red;
+}
+========================================== */
+
+.icon-phone {
+  width: 0.78125em;
+}
+
+.icon-left {
+  width: 0.548828125em;
+}
+
+.icon-logo {
+  width: 1.1435546875em;
+}
+
+.icon-right {
+  width: 0.548828125em;
+}
+
+.icon-stack {
+  width: 1.09375em;
+}
+
+.icon-suitcase {
+  width: 1.427734375em;
+}
+
+.icon-print {
+  width: 0.9285714285714285em;
+}
+
+.icon-map-marker {
+  width: 0.5714285714285714em;
+}
+
+.icon-feed {
+  width: 0.7862857142857141em;
+}
+
+.icon-truck {
+  width: 1.0357142857142856em;
+}
