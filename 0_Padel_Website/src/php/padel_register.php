@@ -2,39 +2,34 @@
 error_reporting( E_ALL );
 ini_set( 'display_errors', 1 );
 
-$public_access =  true;
+$public_access = true;
 require_once "../lib/autoload.php";
 
-        //get data
+PrintHeaderStartreg();
 
-        if ( count($old_post) > 0 )
-        {
-            $data = [ 0 => [
-                "usr_voornaam" => $old_post['usr_voornaam'],
-                "usr_naam" => $old_post['usr_naam'],
-                "usr_email" => $old_post['usr_email'],
-                "usr_password" => $old_post['usr_password']
-            ]
-            ];
-        }
-        else $data = [ 0 => [ "usr_voornaam" => "", "usr_naam" => "", "usr_email" => "", "usr_password" => "" ]];
 
-        //get template
-        $output = file_get_contents("../html/register.html");
+//toon messages als er zijn
+//foreach ( $msgs as $msg )
+//{
+//  print '<div class="alert alert-success" role="alert">' . $msg . '</div>';
+//}
 
-        //add extra elements
-        $extra_elements['csrf_token'] = GenerateCSRF( "register.php"  );
+//get data
+//$data = [ 0 => [ "usr_email" => "", "usr_password" => "" ]];
 
-        //merge
-        $output = MergeViewWithData( $output, $data );
-        $output = MergeViewWithExtraElements( $output, $extra_elements );
-        $output = MergeViewWithErrors( $output, $errors );
-        $output = RemoveEmptyErrorTags( $output, $data );
+//get template
+$output = file_get_contents("../html/register.html");
 
-        print $output;
-        ?>
-    </div>
-</div>
+//add extra elements
+//$extra_elements['csrf_token'] = GenerateCSRF( "login.php"  );
 
-</body>
-</html>
+//merge
+//$output = MergeViewWithData( $output, $data );
+//$output = MergeViewWithExtraElements( $output, $extra_elements );
+//$output = MergeViewWithErrors( $output, $errors );
+//$output = RemoveEmptyErrorTags( $output, $data );
+
+print $output;
+
+
+PrintFooterreg();

@@ -1,15 +1,20 @@
 <div class="loginbanner">
   <div class="login">
-    <h1>Login</h1>
-    <form method="post">
-      <input type="text" name="user" placeholder="e-mail" required="required" />
+    <h1>Welkom op onze padelsite! </h1>
+    <h2>Gelieve eerst in te loggen of te <a href="./src/php/padel_register.php">registreren!</a></h2>
+    <form id="mainform" name="mainform" method="POST" action="login_check.php">
+      <!--security-->
+      <input type="hidden" name="csrf" value="@csrf_token@">
+      <!--end security-->
+      <input type="text" name="usr_email" placeholder="e-mail" required="required" />
       <input
               type="password"
-              name="p"
+              id="usr_password"
+              name="usr_password"
               placeholder="Wachtwoord"
               required="required"
       />
-      <button type="submit" class="button">Let me in</button>
+      <button type="submit" value="Login" class="button">Let me in</button>
     </form>
   </div>
 </div>

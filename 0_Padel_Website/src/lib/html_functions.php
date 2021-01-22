@@ -4,10 +4,25 @@ function PrintHeader()
     $head = file_get_contents("./src/html/header.html");
     print $head;
 }
+function PrintHeaderStart()
+{
+    $head = file_get_contents("./src/html/header_start.html");
+    print $head;
+}
+function PrintHeaderStartreg()
+{
+    $head = file_get_contents("../html/header_start.html");
+    print $head;
+}
 
 function PrintFooter()
 {
     $head = file_get_contents("./src/html/footer.html");
+    print $head;
+}
+function PrintFooterreg()
+{
+    $head = file_get_contents("../html/footer.html");
     print $head;
 }
 
