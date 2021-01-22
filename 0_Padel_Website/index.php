@@ -5,7 +5,7 @@ ini_set( 'display_errors', 1 );
 $public_access = true;
 require_once "./src/lib/autoload.php";
 
-PrintHeaderStart();
+PrintHeaderLogin();
 
 
 //toon messages als er zijn
@@ -32,4 +32,4 @@ $output = file_get_contents("./src/html/login.html");
 print $output;
 
 
-PrintFooter();
+PrintFooterLogin();

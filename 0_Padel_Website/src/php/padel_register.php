@@ -5,7 +5,7 @@ ini_set( 'display_errors', 1 );
 $public_access = true;
 require_once "../lib/autoload.php";
 
-PrintHeaderStartreg();
+PrintHeaderRegister();
 
 
 //toon messages als er zijn
@@ -32,4 +32,4 @@ $output = file_get_contents("../html/register.html");
 print $output;
 
 
-PrintFooterreg();
+PrintFooter();

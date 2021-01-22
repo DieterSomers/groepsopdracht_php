@@ -124,7 +124,6 @@ footer {
     h2 {
       color: $mediumblue;
       font-size: 20px;
-      margin-bottom: 1.5rem;
       a {
         text-decoration: underline;
         color: $darkblue;
@@ -169,7 +168,7 @@ footer {
         color: $darkblue;
         border: none;
         border-radius: 50px;
-        box-shadow: 0 4px #999;
+        box-shadow: 0 4px rgba(153, 153, 153, 0.767);
         width: 50%;
         margin: 0 auto;
         margin-top: 20px;
