@@ -22,7 +22,7 @@ h2 {
 }
 
 header {
-  background-color: #543d2c;
+  background-color: $darkblue;
   .container {
     display: flex;
     align-items: center;
@@ -31,14 +31,14 @@ header {
       display: flex;
       align-items: center;
       font-size: 40px;
-      color: #f1f1f1;
+      color: $lightgreen;
       transition: all 300ms;
       span {
         margin-left: 15px;
         font-size: 30px;
       }
       &:hover {
-        color: pink;
+        color: $lightblue;
       }
     }
     nav {
@@ -52,14 +52,14 @@ header {
             margin-right: 0;
           }
           a {
-            color: #f1f1f1;
+            color: $lightgreen;
             padding: 10px;
-            border-bottom: 1px solid grey;
+            border-bottom: 1px solid $lightgreen;
             transition: all 300ms;
             &:hover,
             &.active {
-              color: pink;
-              border-bottom: 1px solid pink;
+              color: $lightblue;
+              border-bottom: 1px solid $lightblue;
             }
           }
         }
@@ -68,11 +68,11 @@ header {
   }
 }
 main {
-  background-color: #1f2832;
+  background-color: $mediumblue;
   color: #f1f1f1;
   min-height: 75vh;
   section {
-    background-color: #a53333;
+    background-color: $lightgreen;
     margin-top: 10px;
     padding: 20px 0px;
     &:nth-child(1) {
@@ -81,7 +81,7 @@ main {
   }
 }
 footer {
-  background-color: #749ca1;
+  background-color: $darkblue;
   padding: 20px 0;
   .container {
     display: flex;
@@ -89,39 +89,40 @@ footer {
     align-items: center;
     section {
       a {
-        color: #f1f1f1;
+        color: $lightgreen;
       }
     }
   }
 }
 
 .loginbanner {
-  background-color: black;
+  background-color: $darkblue;
   .login {
     padding-top: 1px;
     text-align: center;
     margin: 0 auto;
     width: 500px;
     h1 {
-      color: #F1F1F1;
+      color: $lightgreen;
       margin-top: 20px;
     }
     form {
       display: flex;
       flex-direction: column;
       padding: 2em;
-      background-color: black;
-      border: 1px solid black;
+      background-color: $darkblue;
+      border: 1px solid $darkblue;
       border-radius: 5px;
-      input, button {
-        margin: .3em 0;
+      input,
+      button {
+        margin: 0.3em 0;
         text-align: center;
         outline: none;
-        border: 1px solid black;
+        border: 1px solid $darkblue;
       }
       input {
         padding: 1em;
-        color: #F1F1F1;
+        color: $lightgreen;
         background: transparent;
         border: 0;
         border-bottom: 1px solid;
@@ -131,14 +132,14 @@ footer {
         line-height: 1.5;
         margin-bottom: 20px;
         &::placeholder {
-          color: #F1F1F1;
+          color: $lightgreen;
         }
       }
       .button {
-        transition: all .2s ease;
+        transition: all 0.2s ease;
         cursor: pointer;
         color: #fff;
-        background-color: #e04343;
+        background-color: $mediumgreen;
         border: none;
         border-radius: 50px;
         box-shadow: 0 4px #999;
@@ -147,10 +148,10 @@ footer {
         margin-top: 20px;
         padding: 1em 4em;
         &:hover {
-          background-color: #e53333;
+          background-color: $mediumgreen;
         }
         &:active {
-          background-color: #e53333;
+          background-color: $mediumgreen;
           box-shadow: 0 3px #888;
           transform: translateY(2px);
         }
@@ -158,5 +159,3 @@ footer {
     }
   }
 }
-
-
