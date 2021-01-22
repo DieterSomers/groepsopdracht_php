@@ -71,8 +71,8 @@ header {
   }
 }
 main {
-  background-color: $mediumblue;
-  color: #f1f1f1;
+  background-color: #f1f1f1;
+  color: $mediumblue;
   height: calc(100vh - 320px);
   section {
     background-color: $lightgreen;
@@ -127,6 +127,9 @@ footer {
       a {
         text-decoration: underline;
         color: $darkblue;
+        &:hover {
+          color: $mediumgreen;
+        }
       }
     }
     form {
