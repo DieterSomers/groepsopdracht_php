@@ -1,13 +1,13 @@
 <?php
 function PrintHeader()
 {
-    $head = file_get_contents("src/html/header.html");
+    $head = file_get_contents("./src/html/header.html");
     print $head;
 }
 
 function PrintFooter()
 {
-    $head = file_get_contents("src/html/footer.html");
+    $head = file_get_contents("./src/html/footer.html");
     print $head;
 }
 

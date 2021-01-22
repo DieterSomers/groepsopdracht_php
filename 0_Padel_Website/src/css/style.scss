@@ -41,6 +41,7 @@ header {
         color: $lightblue;
       }
     }
+
     nav {
       margin-left: auto;
       ul {
@@ -88,8 +89,8 @@ footer {
     justify-content: space-around;
     align-items: center;
     section {
-      a {
-        color: $lightgreen;
+      .social {
+        margin-top: 10px;
       }
     }
   }
