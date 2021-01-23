@@ -7,29 +7,31 @@ require_once "../lib/autoload.php";
 
 PrintHeaderRegister();
 
-
-//toon messages als er zijn
-//foreach ( $msgs as $msg )
-//{
-//  print '<div class="alert alert-success" role="alert">' . $msg . '</div>';
-//}
-
 //get data
-//$data = [ 0 => [ "usr_email" => "", "usr_password" => "" ]];
+if ( count($old_post) > 0 )
+{
+    $data = [ 0 => [
+        "usr_voornaam" => $old_post['usr_voornaam'],
+        "usr_naam" => $old_post['usr_naam'],
+        "usr_email" => $old_post['usr_email'],
+        "usr_password" => $old_post['usr_password']
+    ]
+    ];
+}
+else $data = [ 0 => [ "usr_voornaam" => "", "usr_naam" => "", "usr_email" => "", "usr_password" => "" ]];
 
 //get template
 $output = file_get_contents("../html/register.html");
 
 //add extra elements
-//$extra_elements['csrf_token'] = GenerateCSRF( "login.php"  );
+$extra_elements['csrf_token'] = GenerateCSRF( "register.php"  );
 
 //merge
-//$output = MergeViewWithData( $output, $data );
-//$output = MergeViewWithExtraElements( $output, $extra_elements );
-//$output = MergeViewWithErrors( $output, $errors );
-//$output = RemoveEmptyErrorTags( $output, $data );
+$output = MergeViewWithData( $output, $data );
+$output = MergeViewWithExtraElements( $output, $extra_elements );
+$output = MergeViewWithErrors( $output, $errors );
+$output = RemoveEmptyErrorTags( $output, $data );
 
 print $output;
-
 
 PrintFooter();
