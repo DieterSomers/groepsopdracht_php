@@ -78,9 +78,6 @@ main {
     background-color: $lightgreen;
     margin-top: 10px;
     padding: 20px 0px;
-    &:nth-child(1) {
-      margin-top: 0;
-    }
   }
 }
 footer {
@@ -127,6 +124,7 @@ footer {
       a {
         text-decoration: underline;
         color: $darkblue;
+        transition: all 0.3s ease;
         &:hover {
           color: $mediumgreen;
         }
@@ -164,7 +162,7 @@ footer {
         }
       }
       .button {
-        transition: all 0.2s ease;
+        transition: all 0.3s ease;
         cursor: pointer;
         color: #fff;
         background-color: $mediumgreen;
