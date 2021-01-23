@@ -2,7 +2,7 @@
   <div class="container login">
     <h1>Welkom op onze padelsite! </h1>
     <h2>Gelieve eerst in te loggen of te <a href="./src/php/padel_register.php">registreren!</a></h2>
-    <form id="mainform" name="mainform" method="POST" action="login_check.php">
+    <form id="mainform" name="mainform" method="POST" action="./src/lib/login_check.php">
       <!--security-->
       <input type="hidden" name="csrf" value="@csrf_token@">
       <!--end security-->
