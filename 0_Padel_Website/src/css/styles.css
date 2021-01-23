@@ -86,6 +86,14 @@ main h2 a {
 main h2 a:hover {
     color: var(--mediumgreen);
 }
+.noaccess div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.noaccess img {
+    height: 500px;
+}
 
 /* ---------------- LOGIN ---------------- */
 #mainform {
