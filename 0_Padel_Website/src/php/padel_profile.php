@@ -17,7 +17,7 @@ PrintHeader();
         $rows = GetData( "select * from players where pla_id=" . $_GET['pla_id'] );
 
         //get template
-        $template = file_get_contents("../../src/html/profile.html");
+        $template = file_get_contents("../html/profile.html");
 
         //merge
         foreach ( $rows as $row )
