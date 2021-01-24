@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:100,300,400,600,800");
+@import "../../icons/style.css";
+/* Colors var(--Color) */
+:root {
+    --lightblue: #77a1d9;
+    --mediumblue: #457abf;
+    --darkblue: #023059;
+    --mediumgreen: #a9d962;
+    --lightgreen: #d6f2ac;
+    --white: #F1F1F1;
+}
+
+/* Minifyed reset file */
+*{box-sizing:border-box}a{text-decoration:none}a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:"";content:none}table{border-collapse:collapse;border-spacing:0}
+
+
+body {
+    font: 1rem "Raleway", Helvetica, sans-serif;
+    height: 100%;
+    background-color: var(--white)
+}
+.container {
+    margin: 0 auto;
+    max-width: 80rem;
+    text-align: center;
+}
+h1 {font-size: 3rem;}
+h2 {font-size: 1.5rem;}
+h1, h2 {color: var(--mediumblue);}
+
+    /* ---------------- HEADER ---------------- */
+header .container {
+    display: flex;
+    align-items: center;
+}
+header .container .logo {
+    display: flex;
+    align-items: center;
+    font-size: 2.5rem;
+    color: var(--lightgreen);
+    transition: all 300ms;
+}
+header .container .logo:hover {
+    color: var(--lightblue);
+}
+header .container .logo span {
+    margin-left: .9375rem;
+    font-size: 1.875rem;
+}
+header .container nav {
+    margin-left: auto;
+}
+header .container nav ul {
+    display: flex;
+    align-items: center;
+}
+header .container nav ul li {
+    margin: 0 .9375rem;
+}
+header .container nav ul li:nth-last-child(n) {
+    margin-right: 0;
+}
+header .container nav ul li a {
+    color: var(--lightgreen);
+    padding: .625rem;
+    border-bottom: 1px solid var(--lightgreen);
+    transition: all 300ms ease-in-out;
+}
+header .container nav ul li a:hover, header .container nav ul li a.active {
+    color: var(--lightblue);
+    border-bottom: 1px solid var(--lightblue);
+}
+
+/* ---------------- MAIN ---------------- */
+main {
+    background-color: var(--white);
+    color: var(--mediumblue);
+    min-height: calc(100vh - 320px);
+    padding: 1.5rem
+}
+main h2 a {
+    text-decoration: underline;
+    color: var(--darkblue);
+    transition: all 300ms ease-in-out;
+}
+main h2 a:hover {
+    color: var(--mediumgreen);
+}
+.noaccess div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.noaccess img {
+    height: 500px;
+}
+
+/* ---------------- LOGIN ---------------- */
+#mainform {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border: 1px solid var(--white);
+}
+#mainform input, #mainform .button {outline: none;}
+#mainform input {
+    padding: 1rem 2.2rem;
+    color: var(--mediumblue);
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid;
+    width: 31.25rem;
+    font-family: inherit;
+    font-weight: 300;
+    line-height: 1.5;
+    margin: 0 auto;
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+#mainform input::placeholder {
+    color: var(--mediumblue);
+}
+#mainform input:focus::placeholder {
+    color: rgba(69, 122, 191, .5);
+}
+#mainform .button {
+    transition: all 300ms ease-in-out;
+    cursor: pointer;
+    background-color: var(--mediumgreen);
+    color: var(--darkblue);
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 3px rgba(153, 153, 153, 0.767);
+    width: 27rem;
+    margin: 0 auto;
+    margin-top: 1.25rem;
+    padding: 1rem 4rem;
+}
+#mainform .button:hover {
+    background-color: var(--mediumblue);
+    color: var(--white)
+}
+#mainform .button:active {
+    background-color: var(--mediumblue);
+    box-shadow: 0 3px #888;
+    transform: translateY(2px);
+    color: var(--white)
+}
+/* ---------------- FOOTER ---------------- */
+
+footer,header {
+    background-color: var(--darkblue);
+    padding: 1.25rem 0;
+}
+footer .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+footer .container section a {
+    color: var(--lightgreen);
+    transition: all 300ms ease-in-out;
+}
+footer .container section a:hover {
+    color: var(--lightblue);
+}
+footer .container section .social {
+    margin-top: .625rem;
+}
+footer .container section .social a {
+    font-size: 1.875rem;
+}

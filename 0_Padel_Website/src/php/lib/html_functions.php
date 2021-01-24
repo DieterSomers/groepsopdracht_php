@@ -1,15 +1,36 @@
 <?php
 function PrintHeader()
 {
-    $head = file_get_contents("src/html/header.html");
+    $head = file_get_contents("../html/header.html");
+    print $head;
+}
+function PrintHeaderLogin()
+{
+    $head = file_get_contents("./src/html/header_Login.html");
+    print $head;
+}
+function PrintHeaderRegister()
+{
+    $head = file_get_contents("../html/header_Register.html");
+    print $head;
+}
+function PrintHeaderNoAccess()
+{
+    $head = file_get_contents("../html/header_No_Access.html");
     print $head;
 }
 
 function PrintFooter()
 {
-    $head = file_get_contents("src/html/footer.html");
+    $head = file_get_contents("../html/footer.html");
     print $head;
 }
+function PrintFooterLogin()
+{
+    $head = file_get_contents("./src/html/footer_Login.html");
+    print $head;
+}
+
 
 function MergeViewWithData( $template, $data )
 {

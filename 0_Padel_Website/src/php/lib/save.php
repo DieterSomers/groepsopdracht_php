@@ -76,7 +76,7 @@ function SaveFormData()
         print $result->rowCount() . " records affected";
 
         //redirect after insert or update
-        if ( $insert AND $_POST["afterinsert"] > "" ) header("Location: ../" . $_POST["afterinsert"] );
-        if ( $update AND $_POST["afterupdate"] > "" ) header("Location: ../" . $_POST["afterupdate"] );
+        if ( $insert AND $_POST["afterinsert"] > "" ) header("Location: ../php/" . $_POST["afterinsert"] );
+        if ( $update AND $_POST["afterupdate"] > "" ) header("Location: ../php/" . $_POST["afterupdate"] );
     }
 }

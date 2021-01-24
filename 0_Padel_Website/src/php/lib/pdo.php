@@ -1,4 +1,21 @@
 <?php
+require_once "autoload.php";
+
+function CreateConnection()
+{
+    global $conn;
+    global $servername, $dbname, $username, $password;
+
+    // Create and check connection
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    }
+    catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
+    }
+}
+
 function GetData( $sql )
 {
     require_once 'connection_data.php';
@@ -28,6 +45,18 @@ function GetData( $sql )
         return [];
     }
 
+}
+
+function ExecuteSQL( $sql )
+{
+    global $conn;
+
+    CreateConnection();
+
+    //define and execute query
+    $result = $conn->query( $sql );
+
+    return $result;
 }
 
 ?>
