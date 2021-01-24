@@ -6,5 +6,5 @@ require_once 'src/lib/autoload.php';
 
 unset($_SESSION['user']);
 session_destroy();
-session_regenerate_id('user');
-header("Location: ../../index.php?logout=true");
+session_regenerate_id();
+header("Location: ./index.php?logout=true");

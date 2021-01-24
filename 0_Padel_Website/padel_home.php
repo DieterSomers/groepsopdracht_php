@@ -48,7 +48,8 @@ var_dump($_SESSION['user']);
             <h1>Your Last Match</h1>
             <?php
             //get data
-            $data = GetData( 'select mat_time, pA1.pla_name as pA1, pA2.pla_name as pA2, pB1.pla_name as pB1, pB2.pla_name as pB2, mat_set1_teaA, mat_set2_teaA, mat_set3_teaA, mat_set1_teaB, mat_set2_teaB, mat_set3_teaB, cou_name from matches
+            $data = GetData( 'select mat_time, concat(pA1.pla_name, " ", pA1.pla_surname) as pA1, concat(pA2.pla_name, " ", pA2.pla_surname) as pA2, 
+concat(pB1.pla_name, " ", pB1.pla_surname) as pB1, concat(pB2.pla_name, " ", pB2.pla_surname) as pB2, mat_set1_teaA, mat_set2_teaA, mat_set3_teaA, mat_set1_teaB, mat_set2_teaB, mat_set3_teaB, cou_name from matches
                 inner join players pA1 on pA1.pla_id = mat_teaA_pla1_id
                 inner join players pA2 on pA2.pla_id = mat_teaA_pla2_id
                 inner join players pB1 on pB1.pla_id = mat_teaB_pla1_id
