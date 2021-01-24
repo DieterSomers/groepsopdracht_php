@@ -11,14 +11,14 @@ PrintHeaderRegister();
 if ( count($old_post) > 0 )
 {
     $data = [ 0 => [
-        "usr_voornaam" => $old_post['usr_voornaam'],
-        "usr_naam" => $old_post['usr_naam'],
-        "usr_email" => $old_post['usr_email'],
-        "usr_password" => $old_post['usr_password']
+        "pla_name" => $old_post['pla_name'],
+        "pla_surname" => $old_post['pla_surname'],
+        "pla_email" => $old_post['pla_email'],
+        "pla_password" => $old_post['pla_password']
     ]
     ];
 }
-else $data = [ 0 => [ "usr_voornaam" => "", "usr_naam" => "", "usr_email" => "", "usr_password" => "" ]];
+else $data = [ 0 => [ "pla_name" => "", "pla_surname" => "", "pla_email" => "", "pla_password" => "" ]];
 
 //get template
 $output = file_get_contents("src/html/register.html");

@@ -79,7 +79,7 @@ function ValidateUsrPassword( $password )
 {
     if ( strlen($password) < 8 )
     {
-        $_SESSION['errors']['usr_password_error'] = "Het wachtwoord moet minstens 8 tekens bevatten";
+        $_SESSION['errors']['pla_password_error'] = "Het wachtwoord moet minstens 8 tekens bevatten";
         return false;
     }
 
@@ -94,19 +94,19 @@ function ValidateUsrEmail( $email )
     }
     else
     {
-        $_SESSION['errors']['usr_email_error'] = "Geen geldig e-mailadres!";
+        $_SESSION['errors']['pla_email_error'] = "Geen geldig e-mailadres!";
         return false;
     }
 }
 
 function CheckUniqueUsrEmail( $email )
 {
-    $sql = "SELECT * FROM user WHERE usr_email='" . $email . "'";
+    $sql = "SELECT * FROM players WHERE pla_email='" . $email . "'";
     $rows = GetData($sql);
 
     if (count($rows) > 0)
     {
-        $_SESSION['errors']['usr_email_error'] = "Er bestaat al een gebruiker met dit e-mailadres";
+        $_SESSION['errors']['pla_email_error'] = "Er bestaat al een gebruiker met dit e-mailadres";
         return false;
     }
 

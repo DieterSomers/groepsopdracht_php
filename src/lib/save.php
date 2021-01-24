@@ -35,11 +35,11 @@ function SaveFormData()
         CompareWithDatabase( $table, $pkey );
 
         //Validaties voor het registratieformulier
-        if ( $table == "user" )
+        if ( $table == "players" )
         {
-            ValidateUsrPassword( $_POST['usr_password'] );
-            ValidateUsrEmail( $_POST['usr_email'] );
-            CheckUniqueUsrEmail( $_POST['usr_email'] );
+            ValidateUsrPassword( $_POST['pla_password'] );
+            ValidateUsrEmail( $_POST['pla_email'] );
+            CheckUniqueUsrEmail( $_POST['pla_email'] );
         }
 
         //terugkeren naar afzender als er een fout is
@@ -71,7 +71,7 @@ function SaveFormData()
                 continue;
             }
 
-            if ( $field == "usr_password" ) //encrypt usr_password
+            if ( $field == "pla_password" ) //encrypt usr_password
             {
                 $value = password_hash( $value, PASSWORD_BCRYPT );
                 $keys_values[] = " $field = '$value' " ;

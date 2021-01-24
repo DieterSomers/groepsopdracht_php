@@ -10,7 +10,7 @@ $user = LoginCheck();
 if ( $user )
 {
     $_SESSION['user'] = $user;
-    $_SESSION['msgs'][] = "Welkom, " . $_SESSION['user']['usr_voornaam'];
+    $_SESSION['msgs'][] = "Welkom, " . $_SESSION['user']['pla_name'];
     GoHome();
 }
 else
@@ -39,13 +39,13 @@ function LoginCheck()
         //Validaties voor het loginformulier
         if ( true )
         {
-            if ( ! key_exists("usr_email", $_POST ) OR strlen($_POST['usr_email']) < 5 )
+            if ( ! key_exists("pla_email", $_POST ) OR strlen($_POST['pla_email']) < 5 )
             {
-                $_SESSION['errors']['usr_password'] = "Het wachtwoord is niet correct ingevuld";
+                $_SESSION['errors']['pla_password'] = "Het wachtwoord is niet correct ingevuld";
             }
-            if ( ! key_exists("usr_password", $_POST ) OR strlen($_POST['usr_password']) < 8 )
+            if ( ! key_exists("pla_password", $_POST ) OR strlen($_POST['pla_password']) < 8 )
             {
-                $_SESSION['errors']['usr_password'] = "Het wachtwoord is niet correct ingevuld";
+                $_SESSION['errors']['pla_password'] = "Het wachtwoord is niet correct ingevuld";
             }
         }
 
@@ -57,17 +57,17 @@ function LoginCheck()
         }
 
         //search user in database
-        $email = $_POST['usr_email'];
-        $ww = $_POST['usr_password'];
+        $email = $_POST['pla_email'];
+        $ww = $_POST['pla_password'];
 
-        $sql = "SELECT * FROM user WHERE usr_email='$email' ";
+        $sql = "SELECT * FROM players WHERE pla_email='$email' ";
         $data = GetData($sql);
 
         if ( count($data) > 0 )
         {
             foreach ( $data as $row )
             {
-                if ( password_verify( $ww, $row['usr_password'] ) ) return $row;
+                if ( password_verify( $ww, $row['pla_password'] ) ) return $row;
             }
         }
 

@@ -21,10 +21,10 @@ concat(pB1.pla_name, " ", pB1.pla_surname) as pB1, concat(pB2.pla_name, " ", pB2
                 inner join players pB1 on pB1.pla_id = mat_teaB_pla1_id
                 inner join players pB2 on pB2.pla_id = mat_teaB_pla2_id
                 inner join courts on cou_id = mat_cou_id
-                where (mat_teaA_pla1_id = ' . $_SESSION["user"]["usr_pla_id"] . ' ||
-                mat_teaA_pla2_id = ' . $_SESSION["user"]["usr_pla_id"] . ' ||
-                mat_teaB_pla1_id = ' . $_SESSION["user"]["usr_pla_id"] . ' ||
-                mat_teaB_pla2_id = ' . $_SESSION["user"]["usr_pla_id"] . ')
+                where (mat_teaA_pla1_id = ' . $_SESSION["user"]["pla_id"] . ' ||
+                mat_teaA_pla2_id = ' . $_SESSION["user"]["pla_id"] . ' ||
+                mat_teaB_pla1_id = ' . $_SESSION["user"]["pla_id"] . ' ||
+                mat_teaB_pla2_id = ' . $_SESSION["user"]["pla_id"] . ')
                 and mat_time > CURRENT_TIMESTAMP
                 order by mat_time desc' );
 
@@ -47,10 +47,10 @@ concat(pB1.pla_name, " ", pB1.pla_surname) as pB1, concat(pB2.pla_name, " ", pB2
                 inner join players pB1 on pB1.pla_id = mat_teaB_pla1_id
                 inner join players pB2 on pB2.pla_id = mat_teaB_pla2_id
                 inner join courts on cou_id = mat_cou_id
-                where (mat_teaA_pla1_id = ' . $_SESSION["user"]["usr_pla_id"] . ' ||
-                mat_teaA_pla2_id = ' . $_SESSION["user"]["usr_pla_id"] . ' ||
-                mat_teaB_pla1_id = ' . $_SESSION["user"]["usr_pla_id"] . ' ||
-                mat_teaB_pla2_id = ' . $_SESSION["user"]["usr_pla_id"] . ')
+                where (mat_teaA_pla1_id = ' . $_SESSION["user"]["pla_id"] . ' ||
+                mat_teaA_pla2_id = ' . $_SESSION["user"]["pla_id"] . ' ||
+                mat_teaB_pla1_id = ' . $_SESSION["user"]["pla_id"] . ' ||
+                mat_teaB_pla2_id = ' . $_SESSION["user"]["pla_id"] . ')
                 and mat_time < CURRENT_TIMESTAMP
                 order by mat_time desc' );
 
