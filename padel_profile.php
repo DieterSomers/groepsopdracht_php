@@ -14,29 +14,26 @@ PrintHeader();
 
         <?php
 
-require_once "../lib/autoload.php";
-PrintHeader();
-print "<main class='container'><h2>Dit is de profile page</h2></main>";
-PrintFooter();
-?>
-        if ( ! is_numeric( $_GET['pla_id']) ) die("Ongeldig argument " . $_GET['pla_id'] . " opgegeven");
+print "<h2>Dit is de profile page</h2>";
 
-        $rows = GetData( "select * from players where pla_id=" . $_GET['pla_id'] );
+       // if ( ! is_numeric( $_GET['pla_id']) ) die("Ongeldig argument " . $_GET['pla_id'] . " opgegeven");
+
+       // $rows = GetData( "select * from players where pla_id=" . $_GET['pla_id'] );
 
         //get template
-        $template = file_get_contents("../html/profile.html");
+        $template = file_get_contents("src/html/profile.html");
 
         //merge
-        foreach ( $rows as $row )
-        {
-            $output = $template;
+       // foreach ( $rows as $row )
+        //{
+          //  $output = $template;
 
-            foreach( array_keys($row) as $field )
-            {
-                $output = str_replace( "@$field@", $row["$field"], $output );
-            }
-            print $output;
-        }
+           // foreach( array_keys($row) as $field )
+            //{
+              //  $output = str_replace( "@$field@", $row["$field"], $output );
+            //}
+            //print $output;
+        //}
 
         ?>
 
