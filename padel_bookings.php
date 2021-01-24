@@ -11,6 +11,28 @@ PrintHeader();
         <div class="container">
 
             <section>
+                <?php
+
+                $data = GetData( "select * from players where pla_id=" . $_SESSION["user"]["pla_id"] );
+                $row = $data[0]; //there's only 1 row in data
+
+                //add extra elements
+                $extra_elements['csrf_token'] = GenerateCSRF( "padel_bookings.php"  );
+                //get template
+                $output = file_get_contents("src/html/booking.html");
+
+                //merge
+                $output = MergeViewWithData( $output, $data );
+                $output = MergeViewWithExtraElements( $output, $extra_elements );
+                $output = MergeViewWithErrors( $output, $errors );
+                $output = RemoveEmptyErrorTags( $output, $data );
+
+                print $output;
+
+                ?>
+            </section>
+
+            <section>
                 <h1>Your Upcoming Matches</h1>
                 <?php
                 //get data
