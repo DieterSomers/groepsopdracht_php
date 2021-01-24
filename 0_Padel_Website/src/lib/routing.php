@@ -4,7 +4,7 @@ function GoToNoAccess()
 {
     global $app_root;
 
-    header("Location: " . $app_root . "/lib/no_access.php");
+    header("Location: " . $app_root . "/no_access.php");
     exit;
 }
 

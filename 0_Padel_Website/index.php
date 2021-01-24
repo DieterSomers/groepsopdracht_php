@@ -7,7 +7,6 @@ require_once "src/lib/autoload.php";
 
 PrintHeaderLogin();
 
-
 //toon messages als er zijn
 //foreach ( $msgs as $msg )
 //{
