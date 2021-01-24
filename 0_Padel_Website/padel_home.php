@@ -33,7 +33,7 @@ var_dump($_SESSION['user']);
                 end)
                 group by pla_name
                 order by matches_won desc
-                limit 3" );
+                limit 5" );
 
             //get template
             $template = file_get_contents("src/html/top_players.html");
