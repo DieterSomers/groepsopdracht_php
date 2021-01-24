@@ -5,7 +5,7 @@ ini_set( 'display_errors', 1 );
 $public_access = true;
 require_once "src/lib/autoload.php";
 
-PrintHeaderRegister();
+PrintStart();
 
 //get data
 if ( count($old_post) > 0 )

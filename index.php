@@ -5,7 +5,7 @@ ini_set( 'display_errors', 1 );
 $public_access = true;
 require_once "src/lib/autoload.php";
 
-PrintHeaderLogin();
+PrintStart();
 
 //toon messages als er zijn
 //foreach ( $msgs as $msg )

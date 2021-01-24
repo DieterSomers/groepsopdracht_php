@@ -4,19 +4,9 @@ function PrintHeader()
     $head = file_get_contents("src/html/header.html");
     print $head;
 }
-function PrintHeaderLogin()
+function PrintStart()
 {
-    $head = file_get_contents("src/html/header_Login.html");
-    print $head;
-}
-function PrintHeaderRegister()
-{
-    $head = file_get_contents("src/html/header_Register.html");
-    print $head;
-}
-function PrintHeaderNoAccess()
-{
-    $head = file_get_contents("src/html/header_No_Access.html");
+    $head = file_get_contents("src/html/header_start.html");
     print $head;
 }
 
