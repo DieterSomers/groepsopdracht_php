@@ -170,3 +170,59 @@ footer .container section .social {
 footer .container section .social a {
     font-size: 1.875rem;
 }
+
+
+/* ---------------- TOP PLAYERS ---------------- */
+.top_players{
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.playercard{
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+    height: 400px;
+    width: 240px;
+
+    background-color: var(--darkblue);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.playercard h2{
+    color: var(--lightblue);
+    margin-top: 10px;
+    margin-bottom: auto;
+}
+.playercard p{
+    text-align: start;
+}
+.playercard img{
+    border-radius: 50%;
+}
+
+/* ---------------- MATCHES ---------------- */
+table.match{
+    margin: 50px auto;
+    background-color: var(--darkblue);
+    width: 600px;
+    border-radius: 20px;
+}
+
+table.match tr td, table.match tr th{
+    padding: 10px;
+}
+
+table.match tr:first-child th{
+    background-color: var(--lightblue);
+    color: var(--darkblue);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+table.match td:nth-child(n+3){
+    background-color: var(--lightgreen);
+    border-radius: 20px;
+}

@@ -1,13 +1,13 @@
 <main>
   <div class="container login">
     <h1>Registreer je hier! </h1>
-    <h2>Heb je al een account? <a href="../../index.php">Log dan hier in</a></h2>
-    <form id="mainform" name="mainform" method="POST" action="../lib/save.php">
+    <h2>Heb je al een account? <a href="index.php">Log dan hier in</a></h2>
+    <form id="mainform" name="mainform" method="POST" action="src/lib/save.php">
       <!-- meta info -->
       <input type="hidden" id="table" name="table" value="user">
       <input type="hidden" id="pkey" name="pkey" value="usr_id">
       <input type="hidden" id="afterinsert" name="afterinsert" value="padel_home.php">
-      <input type="hidden" id="afterupdate" name="afterupdate" value="padel_home.php">
+      <input type="hidden" id="afterupdate" name="afterupdate" value="">
       <!-- end meta info -->
       <!--security-->
       <input type="hidden" name="csrf" value="@csrf_token@">

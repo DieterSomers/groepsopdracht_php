@@ -10,11 +10,3 @@ function CheckAccess()
         GoToNoAccess();
     }
 }
-
-function GoToNoAccess()
-{
-    global $app_root;
-
-    header("Location: " . $app_root . "./no_access.php");
-    exit;
-}

@@ -88,7 +88,7 @@ function ValidateUsrPassword( $password )
 
 function ValidateUsrEmail( $email )
 {
-    if ( filter_var( $email, FILTER_VALIDATE_EMAIL ) )
+    if (filter_var($email, FILTER_VALIDATE_EMAIL))
     {
         return true;
     }

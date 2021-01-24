@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "npm-run-all --parallel sass-dev js-dev server-dev",
+    "dev": "npm-run-all --parallel sass-dev server-dev",
     "sass-dev": "sass ./src/css/style.scss build/css/style.css --watch",
-    "js-dev": "parcel watch ./src/js/index.js --out-dir ./build/js --out-file bundle.js",
+    // "js-dev": "parcel watch ./src/js/index.js --out-dir ./build/js --out-file bundle.js",
     "server-dev": "live-server",
-    "prod": "npm-run-all --serial clean sass-prod js-prod",
+    "prod": "npm-run-all --serial clean sass-prod",
     "clean": "rm -rf ./build/ ./.cache",
     "sass-prod": "sass ./src/css/style.scss build/css/style.css --no-source-map --style=compressed",
-    "js-prod": "parcel build ./src/js/index.js --out-dir ./build/js --out-file bundle.js  --no-source-maps",
+    // "js-prod": "parcel build ./src/js/index.js --out-dir ./build/js --out-file bundle.js  --no-source-maps",
     "deploy": "surge . --domain https://groepstaakphppadel.sh"
   },
   "keywords": [],

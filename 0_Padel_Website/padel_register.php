@@ -3,7 +3,7 @@ error_reporting( E_ALL );
 ini_set( 'display_errors', 1 );
 
 $public_access = true;
-require_once "../lib/autoload.php";
+require_once "src/lib/autoload.php";
 
 PrintHeaderRegister();
 
@@ -21,10 +21,10 @@ if ( count($old_post) > 0 )
 else $data = [ 0 => [ "usr_voornaam" => "", "usr_naam" => "", "usr_email" => "", "usr_password" => "" ]];
 
 //get template
-$output = file_get_contents("../html/register.html");
+$output = file_get_contents("src/html/register.html");
 
 //add extra elements
-$extra_elements['csrf_token'] = GenerateCSRF( "register.php"  );
+$extra_elements['csrf_token'] = GenerateCSRF( "padel_register.php"  );
 
 //merge
 $output = MergeViewWithData( $output, $data );

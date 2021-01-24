@@ -1,0 +1,62 @@
+<form id="mainform" name="mainform" method="POST" action="../lib/save.php">
+    <!-- meta info -->
+    <input type="hidden" id="table" name="table" value="matches">
+    <input type="hidden" id="pkey" name="pkey" value="mat_id">
+    <input type="hidden" id="afterinsert" name="afterinsert" value="padel_bookings.php">
+    <input type="hidden" id="afterupdate" name="afterupdate" value="padel_bookings.php">
+    <!-- end meta info -->
+    <!--security-->
+    <input type="hidden" name="csrf" value="@csrf_token@">
+    <!--end security-->
+    <input type="datetime-local" name="mat_time" placeholder="match date and time" required="required" />
+    @mat_time_error@
+
+    @select_courts@
+    @mat_cou_id_error@
+
+    <table>
+        <tr>
+            <th colspan="2"></th>
+            <th>Set 1</th>
+            <th>Set 2</th>
+            <th>Set 3</th>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="pla_name" placeholder="Team A Player 1" required="required" />
+            </td>
+            <td>
+                <input type="text" name="pla_name" placeholder="Team A Player 2" required="required" />
+            </td>
+            <td>
+                <input type="number" name="pla_name" />
+            </td>
+            <td>@mat_set2_teaA@</td>
+            <td>@mat_set3_teaA@</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="pla_name" placeholder="Team B Player 1" required="required" />
+            </td>
+            <td>
+                <input type="text" name="pla_name" placeholder="Team B Player 2" required="required" />
+            </td>
+            <td>@mat_set1_teaB@</td>
+            <td>@mat_set2_teaB@</td>
+            <td>@mat_set3_teaB@</td>
+        </tr>
+    </table>
+    <input type="text" name="usr_naam" placeholder="Naam" required="required" />
+    @usr_naam_error@
+    <input type="text" name="usr_email" placeholder="E-mail" required="required" />
+    @usr_email_error@
+    <input
+            type="password"
+            id="usr_password"
+            name="usr_password"
+            placeholder="Wachtwoord"
+            required="required"
+    />
+    @usr_password_error@
+    <button type="submit" value="Login" class="button">Registreer!</button>
+</form>
