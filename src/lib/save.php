@@ -42,7 +42,7 @@ function SaveFormData()
         }
 
         //terugkeren naar afzender als er een fout is
-        if ( count($_SESSION['errors']) > 0 )
+        if ( key_exists("errors", $_SESSION) and count($_SESSION['errors']) > 0 )
         {
             $_SESSION['OLD_POST'] = $_POST;
             header( "Location: " . $sending_form_uri ); exit();
@@ -95,13 +95,14 @@ function SaveFormData()
         //run SQL
         $result = ExecuteSQL( $sql );
 
-        //output if not redirected
-//        print $sql ;
-//        print "<br>";
-//        print $result->rowCount() . " records affected";
-
         //redirect after insert or update
         if ( $insert AND $_POST["afterinsert"] > "" ) header("Location: ../../" . $_POST["afterinsert"] );
         if ( $update AND $_POST["afterupdate"] > "" ) header("Location: ../../" . $_POST["afterupdate"] );
+
+        //output if not redirected
+        print $sql ;
+        print "<br>";
+        print $result->rowCount() . " records affected";
+
     }
 }
