@@ -72,8 +72,8 @@ $id = $_SESSION["user"]["pla_id"];
                 <article>
                     <?php
                     //get data
-                    $data = GetData( "SELECT (SUM(mat_set1_teaA) + SUM(mat_set1_teaB) + SUM(mat_set2_teaA) + SUM(mat_set2_teaB) 
-                        + SUM(mat_set3_teaA) + SUM(mat_set3_teaB)) as stats FROM matches
+                    $data = GetData( "SELECT (COALESCE(SUM(mat_set1_teaA) + SUM(mat_set1_teaB) + SUM(mat_set2_teaA) + SUM(mat_set2_teaB) 
+                        + SUM(mat_set3_teaA) + SUM(mat_set3_teaB),0)) as stats FROM matches
                         where '$id' = mat_teaA_pla1_id || '$id' = mat_teaA_pla2_id || 
                         '$id' = mat_teaB_pla1_id || '$id' = mat_teaB_pla2_id;" );
 
