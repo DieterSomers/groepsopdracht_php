@@ -243,3 +243,7 @@ table.match td:nth-child(n+4){
     border-radius: 20px;
 
 }
+/* ---------------- MATCHES ---------------- */
+.booking {
+    margin: 1.25rem;
+}
