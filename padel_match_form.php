@@ -17,7 +17,7 @@ PrintHeader();
                 {
                     $data = [ 0 => [
                         "mat_time" => $old_post['mat_time'],
-                        "mat_cou_id" => $old_post['cou_name'],
+                        "mat_cou_id" => $old_post['mat_cou_id'],
                         "mat_teaA_pla1_id" => $old_post['mat_teaA_pla1_id'],
                         "mat_teaA_pla2_id" => $old_post['mat_teaA_pla2_id'],
                         "mat_teaB_pla1_id" => $old_post['mat_teaB_pla1_id'],
