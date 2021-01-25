@@ -23,7 +23,7 @@ function CompareWithDatabase( $table, $pkey ): void
             if ( in_array( $type, explode("," , "INTEGER,INT,SMALLINT,TINYINT,MEDIUMINT,BIGINT" ) ) )
             {
                 //is de ingevulde waarde ook een int?
-                if ( ! isInt($sent_value) ) //nee
+                if ( ! isInt($sent_value) and ! $can_be_null) //nee
                 {
                     $msg = $sent_value . " moet een geheel getal zijn";
                     $_SESSION['errors'][ "$fieldname" . "_error" ] = $msg;
