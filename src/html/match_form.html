@@ -8,33 +8,54 @@
     <!--security-->
     <input type="hidden" name="csrf" value="@csrf_token@">
     <!--end security-->
-    <input type="datetime-local" name="mat_time" placeholder="match date and time" required="required" />
+    <input type="datetime-local" name="mat_time" placeholder="match date and time" required="required">
     @mat_time_error@
 
-    <input type='text' list="cou_name" name="mat_cou_id"  placeholder="Location"/>
-    @datalist_courts@
+    <input class="dataField" list="cou_name" name="mat_cou_id" placeholder="Location" id="matDate">
     @mat_cou_id_error@
+    <input type="hidden" name="mat_cou_id" id="matDate-hidden">
 
     <table>
         <tr>
             <td>
-                <input type="text" list="pla_name" name="mat_teaA_pla1_id" placeholder="Team A Player 1" required="required" />
+                <input class="dataField" list="pla_name" name="mat_teaA_pla1_id" id="plaA1" placeholder="Team A Player 1" required="required">
+                <input type="hidden" name="mat_teaA_pla1_id" id="plaA1-hidden">
             </td>
             <td>
-                <input type="text" list="pla_name" name="mat_teaA_pla2_id" placeholder="Team A Player 2" />
+                <input class="dataField" list="pla_name" name="mat_teaA_pla2_id" id="plaA2" placeholder="Team A Player 2">
+                <input type="hidden" name="mat_teaA_pla2_id" id="plaA2-hidden">
             </td>
         </tr>
         <tr>
             <td>
-                <input type="text" list="pla_name" name="mat_teaB_pla1_id" placeholder="Team B Player 1" required="required" />
+                <input class="dataField" list="pla_name" name="mat_teaB_pla1_id"id="plaB1" placeholder="Team B Player 1" required="required">
+                <input type="hidden" name="mat_teaB_pla1_id" id="plaB1-hidden">
             </td>
             <td>
-                <input type="text" list="pla_name" name="mat_teaB_pla2_id" placeholder="Team B Player 2" />
+                <input class="dataField" list="pla_name" name="mat_teaB_pla2_id" id="plaB2" placeholder="Team B Player 2">
+                <input type="hidden" name="mat_teaB_pla2_id" id="plaB2-hidden">
             </td>
         </tr>
     </table>
 
+    @datalist_courts@
     @datalist_players@
+
+    <script>
+        let inputFields = document.querySelectorAll('.dataField');
+        inputFields.forEach(el => el.addEventListener('input', function(e) {
+            var input = e.target,
+                list = input.getAttribute('list'),
+                options = document.querySelectorAll('#' + list + ' option[value="'+input.value+'"]'),
+                hiddenInput = document.getElementById(input.getAttribute('id') + '-hidden');
+
+            if (options.length > 0) {
+                hiddenInput.value = input.value;
+                input.value = options[0].innerText;
+            }
+
+        }));
+    </script>
 
     <button type="submit" value="submit" class="button">Create Match</button>
 </form>

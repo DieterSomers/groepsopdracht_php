@@ -30,8 +30,8 @@ function MakeDatalist( $value, $sql )
 
     foreach ( $data as $row )
     {
-        //$datalist .= '<option value="' . $row[0] . '">' . $row[1] . '</option>';
-        $datalist .= '<option data-value="' . $row[0] . '" value="' . $row[1] . '">';
+        $datalist .= '<option value="' . $row[0] . '">' . $row[1] . '</option>';
+        //$datalist .= '<option value="' . $row[0] . '" label="' . $row[1] . '">';
     }
 
     $datalist .= "</datalist>";

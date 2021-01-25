@@ -117,6 +117,18 @@ main h2 a:hover {
     margin-bottom: 1.25rem;
     text-align: center;
 }
+#mainform>table.match input{
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 0 0 0 15px;
+    width: 100%;
+    margin: 0;
+    border-bottom: none;
+}
+#mainform>table.match input::-webkit-outer-spin-button,
+#mainform>table.match input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+}
 #mainform input::placeholder {
     color: var(--mediumblue);
 }
@@ -226,6 +238,9 @@ table.match{
     width: 600px;
     border-radius: 20px;
 }
+table.edit{
+    width: 1200px;
+}
 table.match a{
     color: inherit;
 }
@@ -249,8 +264,13 @@ table.match tr:first-child th:last-child{
 table.match td:nth-child(n+4){
     background-color: var(--mediumgreen);
     border-radius: 20px;
-
+    width: 10%;
 }
+
+table.match td:nth-child(1), table.match td:nth-child(3){
+    /*width: 30%;*/
+}
+
 /* ---------------- MATCHES ---------------- */
 .booking {
     margin: 1.25rem;
