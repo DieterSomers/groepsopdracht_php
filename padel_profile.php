@@ -32,6 +32,39 @@ PrintHeader();
 
         ?>
 
+        <section>
+            <h1>Your partners</h1>
+            <div class="friends">
+                <?php
+                //get data
+                $data = GetData( "select * from players" );
+
+                //get template
+                $template = file_get_contents("src/html/friends.html");
+
+                //merge
+                $output = MergeViewWithData( $template, $data );
+                print $output;
+                ?>
+            </div>
+        </section>
+        <section>
+            <h1>Your contestors</h1>
+            <div class="friends">
+                <?php
+                //get data
+                $data = GetData( "select * from players" );
+
+                //get template
+                $template = file_get_contents("src/html/friends.html");
+
+                //merge
+                $output = MergeViewWithData( $template, $data );
+                print $output;
+                ?>
+            </div>
+        </section>
+
     </div>
 </main>
 

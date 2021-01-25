@@ -207,7 +207,7 @@ footer .container section .social a {
 .playercard{
     display: flex;
     flex-direction: column;
-    margin: 0px 10px;
+    margin: 10px;
     height: 400px;
     width: 240px;
 
@@ -227,6 +227,29 @@ footer .container section .social a {
 .playercard img{
     width: 200px;
     height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ---------------- TOP PLAYERS ---------------- */
+.friends{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+.small{
+    height: 200px;
+    width: 140px;
+}
+
+.small h2{
+    font-size: 1rem;
+}
+.small img{
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 50%;
 }
