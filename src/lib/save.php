@@ -5,7 +5,11 @@ ini_set( 'display_errors', 1 );
 $public_access = true;
 require_once "autoload.php";
 
+//var_dump($_POST);
+//die;
+
 SaveFormData();
+
 function SaveFormData()
 {
     if ( $_SERVER['REQUEST_METHOD'] == "POST" )
@@ -29,12 +33,16 @@ function SaveFormData()
         $table = $_POST['table'];
         $pkey = $_POST['pkey'];
 
+        //insert or update?
+        if ( key_exists("$pkey", $_POST) and $_POST["$pkey"] > 0 ) $update = true;
+        else $insert = true;
+
         //validation
         $sending_form_uri = $_SERVER['HTTP_REFERER'];
         CompareWithDatabase( $table, $pkey );
 
         //Validaties voor het registratieformulier
-        if ( $table == "players" )
+        if ( $table == "players" and $insert)
         {
             ValidateUsrPassword( $_POST['pla_password'] );
             ValidateUsrEmail( $_POST['pla_email'] );
@@ -48,9 +56,6 @@ function SaveFormData()
             header( "Location: " . $sending_form_uri ); exit();
         }
 
-        //insert or update?
-        if ( key_exists("$pkey", $_POST) and $_POST["$pkey"] > 0 ) $update = true;
-        else $insert = true;
 
         if ( $update ) $sql = "UPDATE $table SET ";
         if ( $insert ) $sql = "INSERT INTO $table SET ";

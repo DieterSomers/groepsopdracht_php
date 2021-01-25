@@ -13,16 +13,46 @@
             <!--end security-->
             <input type="hidden" name="pla_id" value="@pla_id@"/>
 
-            <input type="text" name="pla_name" placeholder="@pla_name@"/>
+            <label for="pla_name">Name</label>
+            <input type="text" name="pla_name" id="pla_name" value="@pla_name@"/>
             @pla_name_error@
-            <input type="text" name="pla_surname" placeholder="@pla_surname@"/>
+
+            <label for="pla_surname">Surname</label>
+            <input type="text" name="pla_surname" id="pla_surname" value="@pla_surname@"/>
             @pla_surname_error@
-            <input type="text" name="pla_lvl_id" placeholder="Player level"/>
-            <input type="text" name="pla_age" placeholder="Age"/>
-            <input type="text" name="pla_number" placeholder="Phone number"/>
 
+            <label for="pla_lvl_id">Player level</label>
+            <input class="dataField" name="pla_lvl_id" id="pla_lvl_id" list="pla_level" value="@lvl_description@"/>
+            <input type="hidden" name="pla_lvl_id" id="pla_lvl_id-hidden" value="@pla_lvl_id@">
+            @pla_lvl_id_error@
 
-            <button type="submit" value="Login" class="button">Change it!</button>
+            <label for="pla_age">Age</label>
+            <input type="text" name="pla_age" id="pla_age" value="@pla_age@"/>
+            @pla_age_error@
+
+            <label for="pla_number">Phone number</label>
+            <input type="text" name="pla_number" id="pla_number" value="@pla_number@"/>
+            @pla_number_error@
+
+            @datalist_levels@
+
+            <script>
+                let inputFields = document.querySelectorAll('.dataField');
+                inputFields.forEach(el => el.addEventListener('input', function(e) {
+                    var input = e.target,
+                        list = input.getAttribute('list'),
+                        options = document.querySelectorAll('#' + list + ' option[value="'+input.value+'"]'),
+                        hiddenInput = document.getElementById(input.getAttribute('id') + '-hidden');
+
+                    if (options.length > 0) {
+                        hiddenInput.value = input.value;
+                        input.value = options[0].innerText;
+                    }
+
+                }));
+            </script>
+
+            <button type="submit" value="change" class="button">Change it!</button>
         </form>
     </div>
 </main>
