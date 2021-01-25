@@ -6,7 +6,7 @@ ini_set( 'display_errors', 1 );
 require_once "src/lib/autoload.php";
 PrintHeader();
 //print "<main class='container'><h2>Dit is de home page</h2></main>";
-
+$id = $_SESSION["user"]["pla_id"];
 ?>
 
 <main>
@@ -17,12 +17,13 @@ PrintHeader();
             <div class="playerstats">
                 <article>
                 <?php
+
                 //get data
                 $data = GetData( "select count(mat_id) as matches_played from matches
-inner join players
-where pla_id = mat_teaA_pla1_id || pla_id = mat_teaA_pla2_id || pla_id = mat_teaB_pla1_id || pla_id = mat_teaB_pla2_id
-group by pla_name
-limit 1;" );
+                                        inner join players
+                                        where '$id' = mat_teaA_pla1_id || '$id' = mat_teaA_pla2_id || '$id' = mat_teaB_pla1_id || '$id' = mat_teaB_pla2_id
+                                        group by pla_name
+                                        limit 1;" );
 
                 //get template
                 $template = file_get_contents("src/html/played_games.html");
@@ -39,17 +40,17 @@ limit 1;" );
                     $data = GetData( "select pla_name, count(mat_id) as matches_won from matches
 inner join players
 where (case
-when pla_id = mat_teaA_pla1_id || pla_id = mat_teaA_pla2_id
+when '$id' = mat_teaA_pla1_id || '$id' = mat_teaA_pla2_id
 then (mat_set1_teaA > mat_set1_teaB && mat_set2_teaA > mat_set2_teaB)
         || (mat_set1_teaA > mat_set1_teaB && mat_set3_teaA > mat_set3_teaB)
         || (mat_set2_teaA > mat_set2_teaB && mat_set3_teaA > mat_set3_teaB)
-when pla_id = mat_teaB_pla1_id || pla_id = mat_teaB_pla2_id
+when '$id' = mat_teaB_pla1_id || '$id' = mat_teaB_pla2_id
 then (mat_set1_teaA < mat_set1_teaB && mat_set2_teaA < mat_set2_teaB)
         || (mat_set1_teaA < mat_set1_teaB && mat_set3_teaA < mat_set3_teaB)
         || (mat_set2_teaA < mat_set2_teaB && mat_set3_teaA < mat_set3_teaB)
 end)
 group by pla_name
-order by matches_won DESC
+order by matches_won
 limit 1;" );
 
                     //get template
@@ -67,11 +68,11 @@ limit 1;" );
                     $data = GetData( "select pla_name, count(mat_id) as matches_lose from matches
 inner join players
 where (case
-when pla_id = mat_teaA_pla1_id || pla_id = mat_teaA_pla2_id
+when '$id' = mat_teaA_pla1_id || '$id' = mat_teaA_pla2_id
 then (mat_set1_teaA < mat_set1_teaB && mat_set2_teaA < mat_set2_teaB)
         || (mat_set1_teaA < mat_set1_teaB && mat_set3_teaA < mat_set3_teaB)
         || (mat_set2_teaA < mat_set2_teaB && mat_set3_teaA < mat_set3_teaB)
-when pla_id = mat_teaB_pla1_id || pla_id = mat_teaB_pla2_id
+when '$id' = mat_teaB_pla1_id || '$id' = mat_teaB_pla2_id
 then (mat_set1_teaA > mat_set1_teaB && mat_set2_teaA > mat_set2_teaB)
         || (mat_set1_teaA > mat_set1_teaB && mat_set3_teaA > mat_set3_teaB)
         || (mat_set2_teaA > mat_set2_teaB && mat_set3_teaA > mat_set3_teaB)
