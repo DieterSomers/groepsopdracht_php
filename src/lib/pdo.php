@@ -35,7 +35,7 @@ function GetData( $sql )
     //show result (if there is any)
     if ( $result->rowCount() > 0 )
     {
-        $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+        $rows = $result->fetchAll(PDO::FETCH_BOTH);
         $conn = null;
         return $rows;
     }

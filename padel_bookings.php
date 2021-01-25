@@ -12,9 +12,10 @@ PrintHeader();
 
             <section>
                 <h1>Your Upcoming Matches</h1>
+                <h2><a href="padel_match_form.php">Add new match here...</a></h2>
                 <?php
                 //get data
-                $data = GetData( 'select mat_time, concat(pA1.pla_name, " ", pA1.pla_surname) as pA1, concat(pA2.pla_name, " ", pA2.pla_surname) as pA2, 
+                $data = GetData( 'select mat_id, mat_time, concat(pA1.pla_name, " ", pA1.pla_surname) as pA1, concat(pA2.pla_name, " ", pA2.pla_surname) as pA2, 
 concat(pB1.pla_name, " ", pB1.pla_surname) as pB1, concat(pB2.pla_name, " ", pB2.pla_surname) as pB2, mat_set1_teaA, mat_set2_teaA, mat_set3_teaA, mat_set1_teaB, mat_set2_teaB, mat_set3_teaB, cou_name from matches
                 inner join players pA1 on pA1.pla_id = mat_teaA_pla1_id
                 inner join players pA2 on pA2.pla_id = mat_teaA_pla2_id
@@ -40,7 +41,7 @@ concat(pB1.pla_name, " ", pB1.pla_surname) as pB1, concat(pB2.pla_name, " ", pB2
                 <h1>Your Played Matches</h1>
                 <?php
                 //get data
-                $data = GetData( 'select mat_time, concat(pA1.pla_name, " ", pA1.pla_surname) as pA1, concat(pA2.pla_name, " ", pA2.pla_surname) as pA2, 
+                $data = GetData( 'select mat_id, mat_time, concat(pA1.pla_name, " ", pA1.pla_surname) as pA1, concat(pA2.pla_name, " ", pA2.pla_surname) as pA2, 
 concat(pB1.pla_name, " ", pB1.pla_surname) as pB1, concat(pB2.pla_name, " ", pB2.pla_surname) as pB2, mat_set1_teaA, mat_set2_teaA, mat_set3_teaA, mat_set1_teaB, mat_set2_teaB, mat_set3_teaB, cou_name from matches
                 inner join players pA1 on pA1.pla_id = mat_teaA_pla1_id
                 inner join players pA2 on pA2.pla_id = mat_teaA_pla2_id

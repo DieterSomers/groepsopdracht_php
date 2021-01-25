@@ -20,6 +20,7 @@ function SaveFormData()
         //sanitization
         $_POST = StripSpaces($_POST);
         $_POST = ConvertSpecialChars($_POST);
+        var_dump($_POST);
 
         $table = $pkey = $update = $insert = $where = $str_keys_values = "";
 
@@ -40,6 +41,12 @@ function SaveFormData()
             ValidateUsrPassword( $_POST['pla_password'] );
             ValidateUsrEmail( $_POST['pla_email'] );
             CheckUniqueUsrEmail( $_POST['pla_email'] );
+        }
+
+        //Insert en update matches
+        if ($table == "matches")
+        {
+
         }
 
         //terugkeren naar afzender als er een fout is

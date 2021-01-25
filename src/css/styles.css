@@ -213,6 +213,9 @@ table.match{
     width: 600px;
     border-radius: 20px;
 }
+table.match a{
+    color: inherit;
+}
 
 table.match tr td, table.match tr th{
     padding: 10px;
@@ -221,7 +224,12 @@ table.match tr td, table.match tr th{
 table.match tr:first-child th{
     background-color: var(--lightblue);
     color: var(--darkblue);
+}
+
+table.match tr:first-child th:first-child{
     border-top-left-radius: 20px;
+}
+table.match tr:first-child th:last-child{
     border-top-right-radius: 20px;
 }
 
