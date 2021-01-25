@@ -11,14 +11,11 @@
     <input type="datetime-local" name="mat_time" placeholder="match date and time" required="required" />
     @mat_time_error@
 
-    <input type='text' name="mat_cou_id" list="cou_name" placeholder="Location"/>
+    <input type='text' list="cou_name" name="mat_cou_id"  placeholder="Location"/>
     @datalist_courts@
     @mat_cou_id_error@
 
     <table>
-        <tr>
-            <th colspan="2"></th>
-        </tr>
         <tr>
             <td>
                 <input type="text" list="pla_name" name="mat_teaA_pla1_id" placeholder="Team A Player 1" required="required" />
@@ -39,5 +36,5 @@
 
     @datalist_players@
 
-    <button type="submit" value="Login" class="button">Create Match</button>
+    <button type="submit" value="submit" class="button">Create Match</button>
 </form>

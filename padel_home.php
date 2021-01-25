@@ -7,7 +7,6 @@ require_once "src/lib/autoload.php";
 PrintHeader();
 //print "<main class='container'><h2>Dit is de home page</h2></main>";
 
-var_dump($_SESSION['user']);
 ?>
 
 <main>

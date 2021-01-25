@@ -23,14 +23,14 @@ var_dump($data);
 
 function MakeDatalist( $value, $sql )
 {
-    $datalist = "<input type='text' list=$value />";
+    //$datalist = "<input type='text' list=$value />";
     $datalist = "<datalist id=$value>";
 
     $data = GetData($sql);
 
     foreach ( $data as $row )
     {
-//        $datalist .= '<option value="' . $row[0] . '">' . $row[1] . '</option>';
+        //$datalist .= '<option value="' . $row[0] . '">' . $row[1] . '</option>';
         $datalist .= '<option data-value="' . $row[0] . '" value="' . $row[1] . '">';
     }
 
