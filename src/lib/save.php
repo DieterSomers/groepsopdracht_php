@@ -5,8 +5,6 @@ ini_set( 'display_errors', 1 );
 $public_access = true;
 require_once "autoload.php";
 
-//var_dump($_POST);
-//die;
 SaveFormData();
 function SaveFormData()
 {
@@ -21,7 +19,6 @@ function SaveFormData()
         //sanitization
         $_POST = StripSpaces($_POST);
         $_POST = ConvertSpecialChars($_POST);
-        var_dump($_POST);
 
         $table = $pkey = $update = $insert = $where = $str_keys_values = "";
 
@@ -52,7 +49,7 @@ function SaveFormData()
         }
 
         //insert or update?
-        if ( $_POST["$pkey"] > 0 ) $update = true;
+        if ( key_exists("$pkey", $_POST) and $_POST["$pkey"] > 0 ) $update = true;
         else $insert = true;
 
         if ( $update ) $sql = "UPDATE $table SET ";
@@ -99,9 +96,9 @@ function SaveFormData()
         $result = ExecuteSQL( $sql );
 
         //output if not redirected
-        print $sql ;
-        print "<br>";
-        print $result->rowCount() . " records affected";
+//        print $sql ;
+//        print "<br>";
+//        print $result->rowCount() . " records affected";
 
         //redirect after insert or update
         if ( $insert AND $_POST["afterinsert"] > "" ) header("Location: ../../" . $_POST["afterinsert"] );
