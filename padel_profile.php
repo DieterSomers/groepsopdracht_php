@@ -14,29 +14,21 @@ PrintHeader();
 
         <?php
 
-require_once "../lib/autoload.php";
-PrintHeader();
-print "<main class='container'><h2>Dit is de profile page</h2></main>";
-PrintFooter();
-?>
-        if ( ! is_numeric( $_GET['pla_id']) ) die("Ongeldig argument " . $_GET['pla_id'] . " opgegeven");
+        $data = GetData( "select * from players where pla_id=" . $_SESSION["user"]["pla_id"] );
+        $row = $data[0]; //there's only 1 row in data
 
-        $rows = GetData( "select * from players where pla_id=" . $_GET['pla_id'] );
-
+        //add extra elements
+        $extra_elements['csrf_token'] = GenerateCSRF( "padel_profile.php"  );
         //get template
-        $template = file_get_contents("../html/profile.html");
+        $output = file_get_contents("src/html/profile_form.html");
 
         //merge
-        foreach ( $rows as $row )
-        {
-            $output = $template;
+        $output = MergeViewWithData( $output, $data );
+        $output = MergeViewWithExtraElements( $output, $extra_elements );
+        $output = MergeViewWithErrors( $output, $errors );
+        $output = RemoveEmptyErrorTags( $output, $data );
 
-            foreach( array_keys($row) as $field )
-            {
-                $output = str_replace( "@$field@", $row["$field"], $output );
-            }
-            print $output;
-        }
+        print $output;
 
         ?>
 

@@ -171,6 +171,19 @@ footer .container section .social a {
     font-size: 1.875rem;
 }
 
+/* ---------------- PLAYER STATS ---------------- */
+.playerstats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 3.125rem;
+}
+.playerstats p {
+    background-color: var(--darkblue);
+    padding: 2rem 4rem;
+    border-radius: 20px;
+    color: var(--mediumgreen);
+}
 
 /* ---------------- TOP PLAYERS ---------------- */
 .top_players{
@@ -237,4 +250,8 @@ table.match td:nth-child(n+4){
     background-color: var(--mediumgreen);
     border-radius: 20px;
 
+}
+/* ---------------- MATCHES ---------------- */
+.booking {
+    margin: 1.25rem;
 }

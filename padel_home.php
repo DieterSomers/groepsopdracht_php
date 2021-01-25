@@ -14,6 +14,105 @@ var_dump($_SESSION['user']);
     <div class="container">
 
         <section>
+            <h1>Player Stats</h1>
+            <div class="playerstats">
+                <article>
+                <?php
+                //get data
+                $data = GetData( "select count(mat_id) as matches_played from matches
+inner join players
+where pla_id = mat_teaA_pla1_id || pla_id = mat_teaA_pla2_id || pla_id = mat_teaB_pla1_id || pla_id = mat_teaB_pla2_id
+group by pla_name
+limit 1;" );
+
+                //get template
+                $template = file_get_contents("src/html/played_games.html");
+
+                //merge
+                $output = MergeViewWithData( $template, $data );
+                print $output;
+                ?>
+                    <span>Total games</span>
+                </article>
+                <article>
+                    <?php
+                    //get data
+                    $data = GetData( "select pla_name, count(mat_id) as matches_won from matches
+inner join players
+where (case
+when pla_id = mat_teaA_pla1_id || pla_id = mat_teaA_pla2_id
+then (mat_set1_teaA > mat_set1_teaB && mat_set2_teaA > mat_set2_teaB)
+        || (mat_set1_teaA > mat_set1_teaB && mat_set3_teaA > mat_set3_teaB)
+        || (mat_set2_teaA > mat_set2_teaB && mat_set3_teaA > mat_set3_teaB)
+when pla_id = mat_teaB_pla1_id || pla_id = mat_teaB_pla2_id
+then (mat_set1_teaA < mat_set1_teaB && mat_set2_teaA < mat_set2_teaB)
+        || (mat_set1_teaA < mat_set1_teaB && mat_set3_teaA < mat_set3_teaB)
+        || (mat_set2_teaA < mat_set2_teaB && mat_set3_teaA < mat_set3_teaB)
+end)
+group by pla_name
+order by matches_won DESC
+limit 1;" );
+
+                    //get template
+                    $template = file_get_contents("src/html/won_games.html");
+
+                    //merge
+                    $output = MergeViewWithData( $template, $data );
+                    print $output;
+                    ?>
+                    <span>Total wins</span>
+                </article>
+                <article>
+                    <?php
+                    //get data
+                    $data = GetData( "select pla_name, count(mat_id) as matches_lose from matches
+inner join players
+where (case
+when pla_id = mat_teaA_pla1_id || pla_id = mat_teaA_pla2_id
+then (mat_set1_teaA < mat_set1_teaB && mat_set2_teaA < mat_set2_teaB)
+        || (mat_set1_teaA < mat_set1_teaB && mat_set3_teaA < mat_set3_teaB)
+        || (mat_set2_teaA < mat_set2_teaB && mat_set3_teaA < mat_set3_teaB)
+when pla_id = mat_teaB_pla1_id || pla_id = mat_teaB_pla2_id
+then (mat_set1_teaA > mat_set1_teaB && mat_set2_teaA > mat_set2_teaB)
+        || (mat_set1_teaA > mat_set1_teaB && mat_set3_teaA > mat_set3_teaB)
+        || (mat_set2_teaA > mat_set2_teaB && mat_set3_teaA > mat_set3_teaB)
+end)
+group by pla_name
+order by matches_lose
+limit 1;" );
+
+                    //get template
+                    $template = file_get_contents("src/html/lose_games.html");
+
+                    //merge
+                    $output = MergeViewWithData( $template, $data );
+                    print $output;
+                    ?>
+                    <span>Total lose</span>
+                </article>
+                <article>
+                    <?php
+                    //get data
+                    $data = GetData( "SELECT pla_name, count(mat_id) as sets
+FROM matches
+inner join players
+
+WHERE matches.mat_set3_teaA IS not NULL
+limit 1;" );
+
+                    //get template
+                    $template = file_get_contents("src/html/total_sets.html");
+
+                    //merge
+                    $output = MergeViewWithData( $template, $data );
+                    print $output;
+                    ?>
+                    <span>Total sets</span>
+                </article>
+            </div>
+        </section>
+
+        <section>
             <h1>Best Players</h1>
             <div class="top_players">
             <?php
