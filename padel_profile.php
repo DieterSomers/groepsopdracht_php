@@ -37,23 +37,22 @@ PrintHeader();
             <div class="friends">
                 <?php
                 //get data
-                $data = GetData( "select * from players" );
-
-                //get template
-                $template = file_get_contents("src/html/friends.html");
-
-                //merge
-                $output = MergeViewWithData( $template, $data );
-                print $output;
-                ?>
-            </div>
-        </section>
-        <section>
-            <h1>Your contestors</h1>
-            <div class="friends">
-                <?php
-                //get data
-                $data = GetData( "select * from players" );
+                $id = $_SESSION["user"]["pla_id"];
+                $data = GetData( "select pla_name, pla_surname, pla_img_path from matches
+                    inner join players on mat_teaA_pla1_id = pla_id
+                    where mat_teaA_pla2_id = '$id'
+                    UNION
+                    select pla_name, pla_surname, pla_img_path from matches
+                    inner join players on mat_teaA_pla2_id = pla_id
+                    where mat_teaA_pla1_id = '$id'
+                    UNION
+                    select pla_name, pla_surname, pla_img_path from matches
+                    inner join players on mat_teaB_pla1_id = pla_id
+                    where mat_teaB_pla2_id = '$id'
+                    UNION
+                    select pla_name, pla_surname, pla_img_path from matches
+                    inner join players on mat_teaB_pla2_id = pla_id
+                    where mat_teaB_pla1_id = '$id'" );
 
                 //get template
                 $template = file_get_contents("src/html/friends.html");

@@ -234,7 +234,7 @@ footer .container section .social a {
 /* ---------------- TOP PLAYERS ---------------- */
 .friends{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 50px;
 }
