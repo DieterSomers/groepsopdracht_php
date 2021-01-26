@@ -3,8 +3,8 @@
         <h1>Change your details </h1>
 
         <form id="imgform" action="src/lib/upload.php" method="POST" enctype="multipart/form-data">
-            <img src="@pla_img_path@" alt="profile picture" height="200px" width="200px">
-            <input type="file" name="fileToUpload" id="fileToUpload" hidden>
+            <img id="profile_img" src="@pla_img_path@" alt="profile picture">
+            <input type="file" name="fileToUpload" id="fileToUpload" onchange="document.getElementById('profile_img').src = window.URL.createObjectURL(this.files[0])" hidden>
             <label for="fileToUpload">Choose your file</label>
             <input type="submit" value="Upload Image" name="submit" id="submitfile" hidden>
             <label for="submitfile">Upload your file</label>
