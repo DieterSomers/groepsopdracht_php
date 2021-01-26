@@ -135,7 +135,7 @@ main h2 a:hover {
 #mainform input:focus::placeholder {
     color: rgba(69, 122, 191, .5);
 }
-#mainform .button {
+#mainform .button, #imgform label {
     transition: all 300ms ease-in-out;
     cursor: pointer;
     background-color: var(--mediumgreen);
@@ -148,11 +148,11 @@ main h2 a:hover {
     margin-top: 1.25rem;
     padding: 1rem 4rem;
 }
-#mainform .button:hover {
+#mainform .button:hover, #imgform label:hover {
     background-color: var(--mediumblue);
     color: var(--white)
 }
-#mainform .button:active {
+#mainform .button:active, #imgform label:active {
     background-color: var(--mediumblue);
     box-shadow: 0 3px #888;
     transform: translateY(2px);
@@ -297,4 +297,20 @@ table.match td:nth-child(1), table.match td:nth-child(3){
 /* ---------------- MATCHES ---------------- */
 .booking {
     margin: 1.25rem;
+}
+
+/* ---------------- FILE UPLOAD ---------------- */
+#imgform {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+#imgform img {
+    width: 350px;
+    height: auto;
+    margin: 1.25rem 0;
+}
+#imgform label {
+    margin: .3rem;
 }
