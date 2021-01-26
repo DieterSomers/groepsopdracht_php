@@ -1,6 +1,13 @@
 <main>
     <div class="container login">
         <h1>Change your details </h1>
+
+        <form action="src/lib/upload.php" method="POST" enctype="multipart/form-data">
+            <img src="@pla_img_path@" alt="profile picture" height="200px" width="200px">
+            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="submit" value="Upload Image" name="submit">
+        </form>
+
         <form id="mainform" name="mainform" method="POST" action="src/lib/save.php">
             <!-- meta info -->
             <input type="hidden" id="table" name="table" value="players">
