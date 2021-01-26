@@ -136,7 +136,7 @@ main h2 a:hover {
 #mainform input:focus::placeholder {
     color: rgba(69, 122, 191, .5);
 }
-#mainform .button, #imgform label {
+.button {
     transition: all 300ms ease-in-out;
     cursor: pointer;
     background-color: var(--mediumgreen);
@@ -148,12 +148,13 @@ main h2 a:hover {
     margin: 0 auto;
     margin-top: 1.25rem;
     padding: 1rem 4rem;
+    font-size: 1rem;
 }
-#mainform .button:hover, #imgform label:hover {
+.button:hover {
     background-color: var(--mediumblue);
     color: var(--white)
 }
-#mainform .button:active, #imgform label:active {
+.button:active {
     background-color: var(--mediumblue);
     box-shadow: 0 3px #888;
     transform: translateY(2px);
