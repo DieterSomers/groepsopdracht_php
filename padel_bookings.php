@@ -61,7 +61,7 @@ concat(pB1.pla_name, " ", pB1.pla_surname) as pB1, concat(pB2.pla_name, " ", pB2
                 mat_teaB_pla1_id = ' . $_SESSION["user"]["pla_id"] . ' ||
                 mat_teaB_pla2_id = ' . $_SESSION["user"]["pla_id"] . ')
                 and mat_time > CURRENT_TIMESTAMP
-                order by mat_time desc' );
+                order by mat_time asc' );
 
                 //get template
                 $template = file_get_contents("src/html/match.html");
