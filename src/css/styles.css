@@ -301,6 +301,7 @@ table.match td:nth-child(1), table.match td:nth-child(3){
     margin: 1.25rem;
     border-collapse: separate;
     border-spacing: 0 20px;
+    color: var(--darkblue);
 }
 
 .booking tr{
@@ -315,6 +316,10 @@ table.match td:nth-child(1), table.match td:nth-child(3){
 }
 #mainform .booking input{
     width: 25rem;
+    color: var(--darkblue);
+}
+#mainform .booking input::placeholder{
+    color: var(--darkblue);
 }
 /* ---------------- FILE UPLOAD ---------------- */
 #imgform {
