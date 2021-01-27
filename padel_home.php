@@ -13,7 +13,7 @@ $id = $_SESSION["user"]["pla_id"];
     <div class="container">
 
         <section>
-            <h1>Player Stats</h1>
+            <h1>Player stats</h1>
             <div class="playerstats">
                 <article>
                 <?php
@@ -105,7 +105,7 @@ $id = $_SESSION["user"]["pla_id"];
         </section>
 
         <section>
-            <h1>Best Players</h1>
+            <h1>Best players</h1>
             <div class="top_players">
             <?php
             //get data
@@ -136,7 +136,7 @@ $id = $_SESSION["user"]["pla_id"];
             </div>
         </section>
         <section>
-            <h1>Your Last Match</h1>
+            <h1>Your last match</h1>
             <?php
             //get data
             $data = GetData( 'select mat_time, concat(pA1.pla_name, " ", pA1.pla_surname) as pA1, concat(pA2.pla_name, " ", pA2.pla_surname) as pA2, 

@@ -10,7 +10,7 @@ PrintHeader();
         <div class="container">
 
             <section>
-                <h1>Book A Match</h1>
+                <h1>Book a match</h1>
                 <?php
                 if ( count($old_post) > 0 )
                 {
@@ -46,7 +46,7 @@ PrintHeader();
             </section>
 
             <section>
-                <h1>Your Upcoming Matches</h1>
+                <h1>Your upcoming matches</h1>
                 <?php
                 //get data
                 $data = GetData( 'select mat_id, mat_time, concat(pA1.pla_name, " ", pA1.pla_surname) as pA1, concat(pA2.pla_name, " ", pA2.pla_surname) as pA2, 
@@ -72,7 +72,7 @@ concat(pB1.pla_name, " ", pB1.pla_surname) as pB1, concat(pB2.pla_name, " ", pB2
                 ?>
             </section>
             <section>
-                <h1>Your Played Matches</h1>
+                <h1>Your played matches</h1>
                 <?php
                 //get data
                 $data = GetData( 'select mat_id, mat_time, concat(pA1.pla_name, " ", pA1.pla_surname) as pA1, concat(pA2.pla_name, " ", pA2.pla_surname) as pA2, 
